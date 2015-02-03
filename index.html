@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Maxwell Huang-Hobbs</title>
+		
+		<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+
+
+		<link rel="stylesheet" type="text/css" href="css/hybrid_test.css">
+		<link rel="stylesheet" type="text/css" href="css/superscroller.css">
+
+		<script type="text/javascript" src="./jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="./superscroller.js"></script>
+
+	</head>
+	<body>
+		<div id="containerview" class="animated">
+			<div id="home" class="viewport sheathed">
+				<div id="headcircle" class="maincircle home">
+					<h1>Maxwell Huang-Hobbs</h1>
+					<p>Student, Programmer, Designer</p>
+					<!-- Yeah, I know this sounds super pretentious, but I have no idea what to put for the 3rd item, but when it's really short, the titlebar looks like shit -->
+					<div class="spinarm sheathed" id="one">
+						<a href="#about" class="linkcircle about">
+							<p>About</p>
+						</a>
+					</div>
+					<div class="spinarm sheathed" id="two" >
+						<a href ="#portfolio" class="linkcircle portfolio">
+							<p>Portfolio</p>
+						</a>
+					</div>
+					<div class="spinarm sheathed" id="three" >
+						<a href ="./resume.pdf" class="linkcircle resume">
+							<p>Resume</p>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div id="about" class="viewport sheathed">
+				<div id="aboutcircle" class="maincircle about">
+					<h1>About</h1>
+					<p>
+						I am a student currently attending The University of Toronto for Computer Science and Visual Studies.
+						<br><br>
+						Most of my free time is spent working on various programming projects, websites, or playing guitar.
+						<br><br>
+						Contact me with one of the links below if you'd like to get in touch.
+					</p>
+
+					<a href="#home" class="linkcircle one sheathed home">
+						<p>Home</p>
+					</a>
+					<a href ="#portfolio" class="linkcircle two sheathed portfolio">
+						<p>Portfolio</p>
+					</a>
+					<a title="soundcloud" href ="http://soundcloud.com/is-limbics" class="minilink one sheathed">
+						<p>&#xf0c2;</p>
+					</a>
+
+					<a title="email" href ="mailto:maxwellhuanghobbs@gmail.com" class="minilink two sheathed">
+						<p>&#xf003;</p>
+					</a>
+
+					<a title="linkedin" href ="http://www.linkedin.com/in/adjectiveobject" class="minilink three sheathed">
+						<p>&#xf0e1;</p>
+					</a>
+
+					<a title="github" href ="http://www.github.com/Adjective-Object" class="minilink four sheathed">
+						<p>&#xf113;</p>
+					</a>
+				</div>
+			</div>
+
+
+			<div id="portfolio" class="viewport">
+				<div id="portfoliocircle" class="maincircle portfolio">
+					<h1>Portfolio</h1>
+
+					<a href="#home" class="linkcircle home sheathed">
+						<p>Home</p>
+					</a>
+					<a href ="#about" class="linkcircle about sheathed">
+						<p>About</p>
+					</a>
+
+				</div>
+
+				<div id="screen"> </div>
+				<div id="gallery" class="sheathed">
+					<a class="portfolioitem" href="http://www.enigmasm.com">
+						<img src="./images/enigmasm.png" alt="EnigmaSM">
+						<div>
+							<h2>EnigmaSM Website</h2>
+							<p>
+								A Website made for the EngimaSM hackerspace.<br><br>
+								EnigmaSM is a small group of friends and collaborators working together to make the world a more interesting place.
+							</p>
+						</div>
+					</a>
+					<a class="portfolioitem" href="http://www.enigmasm.com/dgrdr">
+						<img src="./images/dgrdr.png" alt="Dgr_dr">
+						<div>
+							<h2>Dgr_dr</h2>
+							<p>
+								A prototype for an image sharing service made during the Yale Hackathon.<br><br>
+								Every time an image is viewed on the service, the server-side copy is damaged.<br><br>
+								An EnigmaSM project
+							</p>
+						</div>
+					</a>
+					<a class="portfolioitem" href="http://www.enigmasm.com/missed_encounters">
+						<img src="./images/missedencounters.png" alt="Missed Encounters">
+						<div>
+							<h2>Missed Encounters</h2>
+							<p>A small RenPy visual novel made with Jeffery Tao and Griffin Brodman in the hour between 2:00AM and 2:00AM on daylight savings.<br><br>
+								An EnigmaSM project</p>
+						</div>
+					</a>
+					<a class="portfolioitem" href="http://www.enigmasm.com/filedump">
+						<img src="./images/filedump.png" alt="File Dump">
+						<div>
+							<h2>File Dump</h2>
+							<p>A prototype for a file sharing service made during the Yale Hackathon<br><br>
+								A user cannot choose what file they wish to download.
+								Instead, they are given a choice between two random files.<br><br>
+								An EnigmaSM project</p>
+						</div>
+					</a>
+
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
