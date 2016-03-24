@@ -1,0 +1,599 @@
+@import url(./minimo/minimo.css);
+
+/* RESET */
+body, html {
+	width: 100%;
+	height: 100%;
+	background-color: #EFEFEF;
+}
+
+body {
+	font-family: minimo;
+}
+
+*, *:after *:before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+
+
+/* SITE GLOBALS */
+
+h1,h2,h3,h4,h5,h6{
+	margin-bottom: 0.5em;
+}
+h1 {
+	font-size: 24px;
+	font-weight: 200;
+}
+h2 {
+	font-size: 18px;
+}
+
+#about, #projects, #resume, #blog {
+	max-width: 640px;
+	margin-left: auto;
+	margin-right: auto;
+
+	padding: 32px;
+}
+
+
+a{
+	color: #4A8985; 
+	transition: color 0.2s;
+}
+a:hover { color: #58A3C2; }
+
+
+/******************************/
+/* NON-LAYOUT SPECIFIC STYLES */
+/******************************/
+
+/* Site Nav */
+
+#site-nav {
+	position: relative;
+	min-height: 30%;
+
+	height: 320px;
+
+	background: linear-gradient(#58A3C2, #4A8985);
+
+	display: flex;
+	padding: 32px;
+}
+
+#site-nav::before, #site-nav::after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+#site-nav::before {
+	/* TODO fade in anim*/
+
+	background-image: url(img/bkg.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+
+	background-position: absolute;
+
+	opacity: 0.1;
+}
+
+#site-nav a {
+	position: relative;
+	width: 	72px;
+	height: 64px;
+
+	line-height: 64px;
+	text-align: center;
+	
+	text-decoration: none;
+	color: #EEEEEE;
+
+	z-index: 300;
+}
+
+#site-nav a::before,
+#site-nav a::after {
+	display: inline-block;
+	transition: transform 0.2s, opacity 0.2s;
+}
+
+#site-nav a:not(:hover)::before,
+#site-nav a:not(:hover)::after {
+	opacity: 0;
+	transform: translate(0, 0);
+}
+
+#site-nav a:not(.narcissism)::before {
+	content: "<";
+}
+
+#site-nav a:not(.narcissism)::after {
+	content: ">";
+}
+
+#site-nav a:hover:before,
+#site-nav a:hover:after {
+	opacity: 1;
+}
+
+#site-nav a:hover:before {
+	transform: translate(-5px, 0);
+}
+#site-nav a:hover:after {
+	transform: translate(5px, 0);
+}
+
+
+
+
+
+
+/* About Section */
+
+#about {
+	position: relative;
+	padding-left: 146px;
+}
+
+#about img {
+	position: absolute;
+	left:   32px;
+	top: 50%;
+	margin-top:-41px;
+	width:  82px;
+	height: 82px;
+
+	border-radius: 50%;
+	border: 4px solid transparent;
+	box-shadow: 0 0 3px #ccc;
+}
+
+
+
+.link-list {
+	padding-top: 32px;
+}
+
+.link-list a {
+	text-decoration: none; 
+	display: inline-block;
+	margin-bottom: 0.3em;
+}
+.link-list a:not(:last-child) { padding-right: 16px; }
+
+
+
+
+/* Project Section */
+
+ul#project-list {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+
+
+	overflow: hidden;
+}
+
+ul#project-list .wrap {
+	position: static;
+	width: 128px;
+	height: 128px;
+}
+
+ul#project-list li { 
+	position: absolute;
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+
+	width: 128px;
+	height: 128px;
+	padding: 12px;
+
+	background-color: #274957;
+	overflow: hidden;
+	color: #EFEFEF;
+}
+
+ul#project-list .img {
+	/* specific bkg set by inline style */
+	background-size: 0 0;
+	background-color: #CCCCCC;
+
+	position: absolute;
+	left:   -32px;
+	right:  -32px;
+	top:    -32px;
+	bottom: -32px;
+
+	z-index: 5;
+
+	transform: rotate(15deg);
+	transition: clip-path 0.3s, -webkit-clip-path 0.3s;
+	clip-path: inset(0 0 0 0);
+	-webkit-clip-path: inset(0 0 0 0);
+}
+
+ul#project-list .img:after{
+	content: "";
+	display:block;
+	position: absolute;
+	left: 	32px;
+	right: 	32px;
+	top: 	32px;
+	bottom: 32px;
+	background-image: inherit;
+	background-color: #CCCCCC;
+	background-size: cover;
+	transform: rotate(-15deg);
+}
+
+ul#project-list .img:before{
+	content: "";
+	display:block;
+	position: absolute;
+	left: 	0;
+	right: 	0;
+	top: 	0;
+	bottom: 0;
+	background-color: #4A8985;
+	opacity: 0.5;
+	z-index: 20;
+	transition: opacity 0.2s;
+}
+
+ul#project-list li:hover .img {
+	z-index: 3;
+}
+
+ul#project-list li:hover .img:before {
+	opacity:0;
+}
+ 
+ul#project-list p {
+	padding-bottom: 1em;
+	height: 4em !important;
+}
+
+ul#project-list h2 {
+	z-index: 10;
+	transform: translate3d(0,0,0);
+	line-height: 20px;
+}
+
+
+ul#project-list li:hover .img {
+	clip-path: inset(0 0 100% 0);
+	-webkit-clip-path: inset(0 0 100% 0);
+}
+ul#project-list li:hover h2, 
+ul#project-list li:hover p {
+	opacity: 1;
+}
+
+ul#project-list li > a {
+	display: block;
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+
+	z-index: 4;
+}
+
+
+
+
+ul#project-list #clear-project-link {
+
+	display: block;
+	position: absolute;
+	right: 32px;
+	bottom: 32px;
+
+	opacity: 0;
+
+	text-decoration: none;
+	color: #EFEFEF;
+	transition: opacity 0.2s;
+	z-index: 9000;
+	pointer-events: none;
+}
+
+ul#project-list.focusing #clear-project-link {
+	pointer-events: all;
+}
+
+ul#project-list li {
+	transition: opacity 0.2s, transform 0.2s, 
+				width 0.2s, height 0.2s;
+}
+
+ul#project-list li:not(.focus) {
+	transform: translate(0,0) !important
+}
+
+
+ul#project-list.focusing {
+	position: relative;
+}
+
+ul#project-list.focusing #clear-project-link {
+	opacity: 1;
+}
+
+ul#project-list.focusing li.focus {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+
+	z-index: 1000;
+}
+
+ul#project-list.focusing li.focus .img {
+	clip-path: inset(0 0 85% 0);
+	-webkit-clip-path: inset(0 0 85% 0);
+}
+
+ul#project-list.focusing li.focus .img::before {
+	display: none;
+}
+
+#project-list .detailed-description {
+	width: 75%;
+	height: 0;
+	opacity:0;
+	transition: opacity 0.5s, height 0.2s;
+}
+
+#project-list.focusing li.focus .detailed-description {
+	opacity:1;
+	height: 64px;
+	z-index: 1000;
+}
+
+.detailed-description a {
+	color: #58A3C2;
+}
+
+.detailed-description a:hover {
+	color: #68C0E5;
+}
+
+
+
+
+
+/* Resume Section */
+
+
+#resume .link-list a {
+	background-color: #58A3C2;
+	color: #EFEFEF;
+	padding: 16px;
+	transition: background-color 0.2s;
+	font-size: 1.2em;
+	font-weight: 200;
+}
+
+#resume .link-list a i {
+	padding-right: 8px;
+}
+
+#resume .link-list a:hover {
+	background-color: #4A8985;
+
+}
+
+
+
+
+
+
+/***************************/
+/*  MASSIVE SCREEN LAYOUT  */
+/***************************/
+
+@media (min-width: 1620px) {
+
+	body {
+		font-size: 24px;
+	}
+
+	h1 {
+		font-size: 42px;
+	}
+	h2 {
+		font-size: 24px;
+	}
+
+	#about, #projects, #resume, #blog {
+		max-width: 1024px;
+		margin-left: auto;
+		margin-right: auto;
+
+		padding: 32px;
+	}
+
+	#site-nav {
+		justify-content: center;
+		align-items: flex-end;
+	}
+
+	#site-nav a {
+		font-size: 32px;
+		height: 60px;
+		width: 140px;
+		margin-left: 64px;
+		margin-right: 64px;
+	}
+
+	#site-nav a.narcissism {
+		position: absolute;
+		top: 50%;
+		margin-top :-32px;
+	}
+
+	#site-nav a.narcissism p {
+		width: 500px;
+		text-align: left;
+		padding-left: 32px;
+	}
+
+	#site-nav a.narcissism .tiny{
+		display: none;
+	}
+
+	#about {
+		padding-left: 192px;
+	}
+
+	#about img {
+		width: 128px;
+		height: 128px;
+	}
+
+
+	ul#project-list .wrap, ul#project-list li {
+		width:  192px;
+		height: 192px;
+		font-size: 24px;
+	}
+}
+
+
+/******************************/
+/*  DESKTOP LAYOUT SPECIFICS  */
+/******************************/
+
+@media (min-width: 1025px) and (max-width: 1619px) {
+	#site-nav {
+		width: 100%;
+		justify-content: center;
+		align-items: flex-end;
+	}
+
+	#site-nav a {
+		margin-left: 24px;
+		margin-right: 24px;
+	}
+
+	#site-nav a.narcissism {
+		position: absolute;
+		top: 50%;
+		margin-top :-32px;
+	}
+
+	#site-nav a.narcissism p {
+		width: 500px;
+		text-align: left;
+		padding-left: 32px;
+	}
+
+	#site-nav a.narcissism .tiny{
+		display: none;
+	}
+
+
+	ul#project-list .wrap, ul#project-list li {
+		width: 25%;
+	}
+}
+
+
+/*TABLET LAYOUT*/
+@media (max-width: 1024px) and (min-width: 591px) {
+	body {
+		padding-left: 128px;
+	}
+
+	#site-nav {
+		position: fixed;
+		left: 0px;
+
+		min-height: 320px;
+		width: 128px;
+
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+
+		height: 100%;
+	}
+
+	#site-nav a.narcissism {
+		position: absolute;
+		top: 32px;
+		left: 50%;
+		width: 64px;
+		margin-left: -32px;
+	}
+
+	#site-nav a.narcissism .big {
+		display: none;
+	}
+
+	ul#project-list .wrap, ul#project-list li {
+		width: 33%;
+	}
+}
+
+
+
+/* PHONE LAYOUT */
+@media (max-width: 590px) {
+	body > div:first-of-type {
+		margin-top: 128px;
+	}
+
+	body {
+		min-width: 360px;
+	}
+
+	#site-nav {
+		z-index: 9000;
+		position: fixed;
+		top:	0;
+		left: 	0;
+		height: 64px;
+		min-height: 64px;
+		width: 100%;
+
+		padding-top: 0;
+		padding-bottom: 0;
+
+		justify-content: space-between;
+
+		background: linear-gradient(#58A3C2, #4f9199);
+	}
+
+	ul#project-list .wrap, ul#project-list li {
+		width: 50%;
+	}
+
+	#site-nav a {
+		height: 64px;
+	}
+
+	#site-nav a.narcissism .big {
+		display: none;
+	}
+}
