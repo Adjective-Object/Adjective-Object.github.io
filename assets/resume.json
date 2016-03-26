@@ -1,0 +1,77 @@
+{
+	"basics": {
+		"name": "Maxwell Huang-Hobbs",
+		"label": "Developer",
+		"picture": "../img/me.jpg",
+		"email": "mhuan13@gmail.com",
+		"phone": "(647) 609 9441",
+		"website": "http://www.huang-hobbs.co",
+		"summary": "Third year computer science specialist at the University of Toronto",
+		"location": {
+			"address": "711 Bay Street",
+			"postalCode": "M5G 2J8",
+			"city": "Toronto",
+			"countryCode": "CA",
+			"region": "Ontario"
+		}
+	},
+	"profiles": [
+		{   "network": "Github",
+			"username": "Adjective-Object",
+			"url": "https://www.github.com/Adjective-Object"
+		},
+		//TODO
+	],
+	"work": [
+		//TODO
+		{	"company": "Genentech",
+			"position": "Web Development Intern",
+			"website": "http://www.gene.com/",
+			"startDate": "2015-06-01",
+			"endDate": "2014-08-25",
+			"summary": "Created tools to aggregate and display video metadata spread across multiple repositories on the company intranet",
+			"highlights": [
+			  "Started the company"
+			]
+		}	
+	],
+	"volunteer": [],
+	"education": [{
+		"institution": "University of Toronto",
+		"area": "Computer Science",
+		"studyType": "Bachelor - Specialist",
+		"startDate": "2013-09-07",
+		"endDate": "present",
+		"gpa": "3.46",
+		"courses": [
+			//TODO
+		]
+	  }],
+	"awards": [{ // TODO the 318 thing
+		"title": "Award",
+		"date": "2014-11-01",
+		"awarder": "Company",
+		"summary": "There is no spoon."
+	}],
+	"publications": [],
+	"skills": [{ // TODO
+		"name": "Web Development",
+		"level": "8/8",
+		"keywords": [
+			"HTML",
+			"CSS",
+			"Javascript"
+		]}
+	],
+	"languages": [{
+		"language": "English",
+		"fluency": "Native speaker"
+		}
+	],
+	"interests": [{ // TODO
+		"name": "Music",
+			"keywords": [
+			]}
+	],
+	"references": []
+}
