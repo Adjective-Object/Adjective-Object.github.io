@@ -9,10 +9,6 @@ function fixSelectedProject() {
 
   relY = projElem.offsetTop;
   relX = projElem.offsetLeft;
-
-  projElem.style.transition = '';
-  projElem.style.transform = 'translate(-' + relX + 'px, -' + relY + 'px)';
-  projElem.style.transition = undefined;
 }
 
 
@@ -59,7 +55,6 @@ function selectProject(project, fast) {
     projElem.classList.add('focus');
     relY = projElem.offsetTop;
     relX = projElem.offsetLeft;
-    projElem.style.transform = 'translate(-' + relX + 'px, -' + relY + 'px)';
     projListElem.classList.add('focusing')
     
     projTitleText.innerHTML = 'Project: '+ project
@@ -90,21 +85,4 @@ document.getElementById('clear-project-link').addEventListener('click',
     selectProject(undefined);
   });
 
-
-// add handler for project list resize
-window
-  .addEventListener('resize',
-    function(evt) {
-      if(selectedProject != undefined) {
-        fixSelectedProject();
-      }
-    });
-
-// onload capture
-if (window.location.hash.startsWith("#project-")) {
-  console.log("hash", window.location.hash);
-  var projname = window.location.hash.split("-")[1];
-  window.scrollTo(0, document.getElementById("projects").offsetTop);
-  selectProject(window.location.hash.substring(9), true);
-}
 

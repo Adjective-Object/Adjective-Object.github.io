@@ -1,60 +1,28 @@
 /* Project Section */
 
 ul#project-list {
-	display: inline-block;
-
+  display: block;
 	position: relative;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex-wrap: wrap;
-	    -ms-flex-wrap: wrap;
-	        flex-wrap: wrap;
-	width: auto;
-
-	width: 100%;
 
 	overflow: hidden;
-}
 
-ul#project-list .wrap {
-	position: static;
-	width: 128px;
-	height: 128px;
-}
-
-ul#project-list {
 	background-color: #274957;
 }
 
 .proj { 
 	position: absolute;
 
+  // flex your muscles
 	display: -webkit-box;
-
 	display: -webkit-flex;
-
 	display: -ms-flexbox;
-
 	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	text-align: center;
 
-	width: 128px;
-	height: 128px;
+  // align that shit centr
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 	padding: 12px;
 
 	background-color: #274957;
@@ -82,9 +50,7 @@ ul#project-list {
     clip-path: url(clip.svg#clip-nohover);
 	clip-path: inset(0 0 0 0);
 	-webkit-clip-path: inset(0 0 0 0);
-}
 
-ul#project-list:not(.notrans) .proj .img {
 	-webkit-transition: -webkit-clip-path 0.3s, -webkit-clip-path 0.3s;
 	        transition: clip-path 0.3s, -webkit-clip-path 0.3s;
 }
@@ -120,10 +86,31 @@ ul#project-list:not(.notrans) .proj .img {
 }
 
 
-ul#project-list:not(.notrans) .img:before{
-	-webkit-transition: opacity 0.2s;
-	        transition: opacity 0.2s;
+@mixin projectGrid($numRows, $numColumns, $rowHeight){
+  ul#project-list {
+    height: $numRows * $rowHeight;
+  }
+
+  @for $i from 1 through $numColumns {
+    $width: 100% / $numColumns;
+    .proj:nth-of-type(#{$numColumns}n+#{$i}) {
+      left: ($i - 1) * $width;
+      right: ($numColumns - $i) * $width - 0.2%;
+    }
+  }
+
+  @for $x from 1 through $numRows + 1 {
+    @for $i from 1 through $numColumns + 1 {
+      $n: ($x - 1) * $numColumns + $i;
+      .proj:nth-of-type(#{$n}) {
+        top: ($x - 1) * $rowHeight;
+        bottom: ($numRows - $x) * $rowHeight - 1px;
+        z-index: $n;
+      }
+    }
+  }
 }
+
 
 
 .proj:hover .img {
@@ -135,9 +122,10 @@ ul#project-list:not(.notrans) .img:before{
 	filter: alpha(opacity=0);
 }
  
-.proj p {
+.proj > p {
 	padding-bottom: 1em;
 	min-height: 4em !important;
+  text-align: center;
 }
 
 .proj h2 {
@@ -202,6 +190,13 @@ ul#project-list:not(.notrans) .img:before{
 	min-height: 1em !important;
 }
 
+.proj.focus {
+  left:0    !important;
+  right:0   !important;
+  top:0     !important;
+  bottom:0  !important;
+  z-index: 1000 !important;
+}
 
 
 
@@ -220,9 +215,7 @@ ul#project-list #clear-project-link {
 	color: #EFEFEF;
 	z-index: 9000;
 	pointer-events: none;
-}
 
-ul#project-list:not(.notrans) #clear-project-link {
 	-webkit-transition: opacity 0.2s, color 0.2s;
 	        transition: opacity 0.2s, color 0.2s;
 }
@@ -233,9 +226,9 @@ ul#project-list.focusing #clear-project-link {
 
 ul#project-list:not(.notrans) .proj {
 	-webkit-transition: opacity 0.2s, -webkit-transform 0.2s, 
-				width 0.2s, height 0.2s;
-	        transition: opacity 0.2s, transform 0.2s, 
-				width 0.2s, height 0.2s;
+        top 0.2s, left 0.2s, right 0.2s, bottom 0.2s;
+	transition: opacity 0.2s, transform 0.2s, 
+        top 0.2s, left 0.2s, right 0.2s, bottom 0.2s
 }
 
 ul#project-list .proj:not(.focus) {
@@ -339,34 +332,22 @@ ul#project-list #clear-project-link:hover{
 
 
 @media (min-width: 1620px) {
-	ul#project-list .wrap, ul#project-list .proj {
-		width:  192px;
-		height: 192px;
+  @include projectGrid(3, 4, 192px);
+  ul#project-list .proj {
 		font-size: 24px;
 	}
 }
 
 @media (min-width: 1025px) and (max-width: 1619px) {
-	ul#project-list .wrap, ul#project-list .proj {
-		width: 25%;
-	}
+  @include projectGrid(4, 3, 128px);
 }
 
 @media (max-width: 1024px) and (min-width: 591px) {
-	ul#project-list .wrap, ul#project-list .proj {
-		width: 33.3333%;
-	}
-
-	ul#project-list .wrap:nth-of-type(3), ul#project-list .wrap::nth-of-type(3) .proj {
-		width: 33.3334%;
-	}
+  @include projectGrid(4, 3, 128px);
 }
 
 @media (max-width: 590px) {
-	ul#project-list .wrap, ul#project-list .proj {
-		width: 50%;
-		height: 100px;
-	}
+  @include projectGrid(6, 2, 128px);
 }
 
 
