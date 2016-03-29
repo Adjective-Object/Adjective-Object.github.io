@@ -1,0 +1,10 @@
+packages:
+ - .
+extra-deps: [
+    hakyll-4.7.5.2,
+    hakyll-sass-0.2.0,
+    filepath-1.4.1.0,
+    split-0.2.3,
+]
+resolver: lts-3.1
+

@@ -1,0 +1,11 @@
+_site
+_cache
+.o
+*.swo
+*.swp
+.stack-work
+*.hi
+*.ho
+*.o
+
+
