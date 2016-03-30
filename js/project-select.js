@@ -85,4 +85,12 @@ document.getElementById('clear-project-link').addEventListener('click',
     selectProject(undefined);
   });
 
+// onload capture
+if (window.location.hash.startsWith("#project-")) {
+  console.log("hash", window.location.hash);
+  var projname = window.location.hash.split("-")[1];
+  window.scrollTo(0, document.getElementById("projects").offsetTop);
+  selectProject(window.location.hash.substring(9), true);
+}
+
 
