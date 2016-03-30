@@ -15,26 +15,57 @@
 			"region": "Ontario"
 		}
 	},
+
 	"profiles": [
 		{   "network": "Github",
 			"username": "Adjective-Object",
 			"url": "https://www.github.com/Adjective-Object"
 		},
-		//TODO
+        {   "network": "Twitter",
+			"username": "AdjectiveObject",
+			"url": "https://www.twitter.com/AdjectiveObject"
+		},
+        {   "network": "Personal Blog",
+			"username": "max",
+			"url": "https://www.huang-hobbs.co/blog"
+		}
 	],
+
 	"work": [
-		//TODO
 		{	"company": "Genentech",
 			"position": "Web Development Intern",
 			"website": "http://www.gene.com/",
 			"startDate": "2015-06-01",
 			"endDate": "2014-08-25",
-			"summary": "Created tools to aggregate and display video metadata spread across multiple repositories on the company intranet",
+			"summary": "Intranet maintenence and ",
 			"highlights": [
-			  "Started the company"
+			  "Created a web application to aggregate and display video metadata spread across multiple repositories on the company intranet."
+              "Developed the visual identity of PTDOS."
+             "Produced and iterated upon department information pages, based on reccomendations from management nad refined through several cycles of user feedback",
 			]
-		}	
+		},
+        {   "company": "Cornell Annual Fund",
+            "position": "Contract Worker",
+            "website": "",
+            "startDate": "2015-02-06",
+            "endDate": "2015-03-14",
+            "summary": "one month contract job to build a promotional site for the 2015 cornell annual fund's annual drive",
+            "highlights": []
+        },
+        {   "company": "Netreach Technologies",
+            "position": "Web Development Intern",
+            "website": "www.netreach.com",
+            "startDate": "2013-02-15",
+            "endDate": "2013-06-7",
+            "summary": ""
+            "highlights": [
+                "Worked in & bug tested the proprietary cmScribe content management system",
+                "Maintained client sites (Berlitz Columbia, Hope Lodge, Away to Donate)"
+                "Built a tmplate blogging site in cmScribe as a Senior Project"
+            ]
+        },
 	],
+
 	"volunteer": [],
 	"education": [{
 		"institution": "University of Toronto",
@@ -44,16 +75,33 @@
 		"endDate": "present",
 		"gpa": "3.46",
 		"courses": [
-			//TODO
+            "Web Programming",
+            "Human-Computer Interaction",
+            "Introduction to Databases",
+
+            "Software Tools / Systems Programming"
+            "Operating Systems",
+            "Computer Organization"
+            "Microprocessors",
+            "Compilers",
+
+            "Principles of Programming Languages",
+            "Software Design",
+
+            "Data Structures and Analysis"
+            "Algorithms and Complexity"
 		]
 	  }],
+
 	"awards": [{ // TODO the 318 thing
 		"title": "Award",
 		"date": "2014-11-01",
 		"awarder": "Company",
 		"summary": "There is no spoon."
 	}],
+
 	"publications": [],
+
 	"skills": [{ // TODO
 		"name": "Web Development",
 		"level": "8/8",
@@ -63,15 +111,18 @@
 			"Javascript"
 		]}
 	],
+
 	"languages": [{
 		"language": "English",
 		"fluency": "Native speaker"
 		}
 	],
+
 	"interests": [{ // TODO
 		"name": "Music",
 			"keywords": [
 			]}
 	],
+
 	"references": []
 }
