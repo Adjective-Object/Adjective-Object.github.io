@@ -1,0 +1,37 @@
+#clear-project-link {
+	display: none;
+}
+
+.proj {
+	padding: 2em;
+}
+
+.proj .img:before {
+	display: none;
+}
+
+.proj > p {
+	min-height: 0 !important;
+	height: auto !important;
+	padding-bottom: 1em !important;
+	padding-top: 1em !important;
+}
+
+.proj .detailed-description p {
+	max-width: 420px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.repo-link {
+	display: block;
+	padding-top: 1em;
+	text-align: right;
+}
+
+// .img {
+// 	clip-path: url(clip.svg#clip-selected) !important;
+// 	clip-path: inset(0 0 85% 0)			!important;
+// 	-webkit-clip-path: inset(0 0 85% 0) !important;
+// }
+

@@ -15,6 +15,8 @@ import GHC.IO.Encoding
 
 --------------------------------------------------------------------------------
 
+(<>) = mappend
+
 main :: IO ()
 main = do
     setLocaleEncoding utf8
@@ -38,9 +40,8 @@ main = do
             route   $ idRoute
             compile $ copyFileCompiler
 
-        match "js/*.js" $ do
-            route   $ idRoute
-            compile $ copyFileCompiler
+        match "projects/*.md" $ do
+            compile $ pandocCompiler
 
         --------------------
         -- POSTS + OEMBED --
@@ -49,10 +50,16 @@ main = do
         create ["index.html"] $ do 
             route $ idRoute
             compile $ do 
-                makeItem ""
-                    >>= loadAndApplyTemplate "templates/index.html" defaultContext
-                    >>= relativizeUrls
+                -- load all posts
+                projects <- recentFirst =<< loadAll "projects/*.md"
 
+                let mainCtx =
+                        listField "projects" defaultContext (return projects) <>
+                        defaultContext
+
+                makeItem ""
+                    >>= loadAndApplyTemplate "templates/index.html" mainCtx
+                    >>= relativizeUrls  
 
         ---------------
         -- TEMPLATES --

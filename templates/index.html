@@ -60,6 +60,36 @@
         <i class="fa fa-arrow-left"></i> back to projects
         </a>
 
+
+        $for(projects)$
+          <li class="proj" id="proj-xgcm">
+            <h2>$name$</h2>
+            <p>
+              $description$
+            </p>
+
+            <div class="detailed-description">
+              $body$
+            </div>
+
+            $if(repo-link)$
+            <a class="repo-link" href="$repo-link$">
+              <i class="fa fa-github"></i> Github Repo
+            </a>
+            $endif$
+            $if(project-link)$
+            <a class="repo-link" href="$repo-link$">
+              <i class="fa fa-github"></i> Github Repo
+            </a>
+            $endif$
+
+            <a class="proj-link" href="#project-xgcm"></a>
+
+            <div class="img" 
+                 style="background-image:url('$img$');"></div>
+          </li>
+        $endfor$
+
           <li class="proj" id="proj-xgcm">
             <h2>xgcm</h2>
             <p>
@@ -70,8 +100,6 @@
               <p>
                 xgcm is a templating tool / language meant to
                 be used as a configuration file manager.
-              </p>
-              <p>
                 It uses an ini-based data declaration format, with
                 embedded lua scripting for data preprocessing.
               </p>  
@@ -97,8 +125,6 @@
                 Wardscore is a tool to track player's
                 warding in  
                 <a href="http://leagueoflegends.com/">League of Legends</a>.
-              </p>  
-              <p>
                 It has over [[ NUMBER ]] unique users to date
               </p>  
             </div>

@@ -11,3 +11,7 @@ watch: site.hs
 	stack build
 	$(stsite) watch
 
+clean:
+	$(stsite) clean
+	stack build
+
