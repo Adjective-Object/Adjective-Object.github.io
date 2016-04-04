@@ -276,6 +276,10 @@ a:hover { color: #58A3C2; }
 	text-align: center;
 }
 
+.proj .detailed-description p:not(:last-child) {
+	margin-bottom: 1em;
+}
+
 .proj h2 {
 	position: relative;
 	z-index: 100;
