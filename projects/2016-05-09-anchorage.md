@@ -2,7 +2,7 @@
 name: anchorage
 fa-icon: fa-anchor
 description: widget based new tab page
-repo-link: https://www.github.com/adjective-object/melee_subaction_unpacker
+repo-link: https://github.com/Adjective-Object/anchorage
 img: img/placeholder_cream.jpg
 ---
 
