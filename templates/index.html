@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>maxwell huang-hobbs</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script>
+    document.write('<link rel="stylesheet" type="text/css" href="css/projects-withscript.css">')
+  </script>
+  <noscript>
+    <link rel="stylesheet" type="text/css" href="css/projects-noscript.css">
+  </noscript>
+
+  <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.5.0/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="assets/minimo/minimo.css">
+  
+  <meta http-equiv="Gontent-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=480">
+
+</head>
+<body>
+  <nav id="site-nav">
+    <a class="narcissism nav-link" data-scroll-time=200 href="#about">
+      <p class="big">maxwell huang-hobbs
+      </p>
+      <p class="tiny">max</p>
+    </a>
+    <a class="nav-link" 
+       data-scroll-time=200 
+       href="#about">about</a>
+    <a class="nav-link" 
+       data-scroll-time=200 
+       href="#projects">projects</a>
+    <a class="nav-link" 
+       data-scroll-time=200 
+       href="#resume">resume</a>
+  </nav>
+  
+  <div id="about">
+      <img src="img/me.jpg" />
+      <h1>Hi, I'm Max</h1>
+      <p>
+       I'm a third year undergrad at University of Toronto, currently working towards a Bachelor's of Computer Science.
+      </p>
+      <nav class="link-list">
+        <a href="https://www.github.com/Adjective-Object"><i class="fa fa-github"></i> github</a>
+        
+        <a href="http://www.huang-hobbs.co/blog"><i class="fa fa-dot-circle-o"></i> blog</a>
+
+        <a href="mailto:mhuan13@gmail.com"><i class="fa fa-envelope"></i> email</a>
+      </nav>
+  </div>
+
+
+  <div id="projects">
+      <h1 id="project-title-text">Projects</h1>
+      <ul id="project-list">
+        
+        <a id="clear-project-link" href="#clear-project">
+        <i class="fa fa-arrow-left"></i> back to projects
+        </a>
+
+        $for(projects)$
+          <li class="proj" id="proj-$name$">
+            <h2>$if(fa-icon)$<i style='font-size: 0.8em;' class="fa $fa-icon$"></i> $endif$$name$</h2>
+            <p>
+              $description$
+            </p>
+
+            <div class="detailed-description">
+              $body$
+            </div>
+
+            $if(repo-link)$
+            <a class="repo-link" href="$repo-link$">
+              <i class="fa fa-github"></i> Github Repo
+            </a>
+            $endif$
+            $if(project-link)$
+            <a class="repo-link" href="$project-link$">
+              Project Site
+            </a>
+            $endif$
+
+            <a class="proj-link" href="#project-$name$"></a>
+
+            <div class="img" 
+                 style="background-image:url('$img$');"></div>
+          </li>
+        $endfor$
+      </ul>
+  </div>
+
+  <div id="resume">
+      <h1>R&eacute;sum&eacute;</h1>
+      <p>
+        If you want to download my resume, it's available here.
+        <nav class="link-list">
+          <a href="assets/resume.pdf"><i class="fa fa-file-pdf-o"></i> download as pdf</a>
+          <!-- 
+          Maybe if the resume.json scheme handled projects..
+          <a href="assets/resume.txt"><i class="fa fa-file-text-o"></i> plain text</a>
+          <a href="assets/resume.json"><i class="fa fa-file-code-o"></i> json</a>
+          -->
+        </nav>
+      </p>
+  </div>
+
+  <div id="footer">
+      </p>
+      </p>
+  </div>
+
+  <script type="text/javascript" src="js/project-select.js"></script>
+  <script type="text/javascript" src="js/scroll-control.js"></script>
+</body>
+</html>

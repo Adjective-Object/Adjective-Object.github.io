@@ -1,0 +1,533 @@
+/* RESET */
+body, html {
+	width: 100%;
+	height: 100%;
+	background-color: #EFEFEF;
+}
+
+body {
+	font-family: minimo;
+}
+
+*, *:after, *:before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+
+
+
+/* SITE GLOBALS */
+
+h1,h2,h3,h4,h5,h6{
+	margin-bottom: 0.5em;
+}
+h1 {
+	font-size: 24px;
+	font-weight: 200;
+}
+h2 {
+	font-size: 18px;
+}
+
+#about, #projects, #resume, #blog {
+	max-width: 640px;
+	margin-left: auto;
+	margin-right: auto;
+
+	padding: 32px;
+}
+
+
+a{
+	color: #4A8985; 
+	-webkit-transition: color 0.2s; 
+	        transition: color 0.2s;
+}
+
+a:hover { color: #58A3C2; }
+
+#firefox-svg-ref {
+    display: none;
+}
+
+
+/******************************/
+/* NON-LAYOUT SPECIFIC STYLES */
+/******************************/
+
+/* Site Nav */
+
+#site-nav {
+	position: relative;
+
+	height: 240px;
+
+	background: -webkit-linear-gradient(#58A3C2, #4A8985);
+
+	background: linear-gradient(#58A3C2, #4A8985);
+
+	display: -webkit-box;
+
+	display: -webkit-flex;
+
+	display: -ms-flexbox;
+
+	display: flex;
+	padding: 32px;
+}
+
+#site-nav:before, #site-nav:after {
+	content: "";
+	
+	display: block;
+	position: absolute;
+
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+#site-nav:before {
+	/* TODO fade in anim*/;
+
+	background-image: url(../img/bkg.jpg);
+	background-attachment: fixed;
+	background-position: bottom;
+	background-size: cover;
+
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+}
+
+#site-nav a {
+	position: relative;
+	width: 	72px;
+	height: 64px;
+
+	line-height: 64px;
+	text-align: center;
+	
+	text-decoration: none;
+	color: #EEEEEE;
+
+	z-index: 300;
+}
+
+#site-nav a:before,
+#site-nav a:after {
+	display: inline-block;
+	-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+	        transition: transform 0.2s, opacity 0.2s;
+}
+
+#site-nav a:not(:hover):before,
+#site-nav a:not(:hover):after {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-webkit-transform: translate(0, 0);
+	    -ms-transform: translate(0, 0);
+	        transform: translate(0, 0);
+}
+
+#site-nav a:not(.narcissism):before {
+	content: "<";
+}
+
+#site-nav a:not(.narcissism):after {
+	content: ">";
+}
+
+#site-nav a:hover:before,
+#site-nav a:hover:after {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+#site-nav a:hover:before {
+	-webkit-transform: translate(-5px, 0);
+	    -ms-transform: translate(-5px, 0);
+	        transform: translate(-5px, 0);
+}
+#site-nav a:hover:after {
+	-webkit-transform: translate(5px, 0);
+	    -ms-transform: translate(5px, 0);
+	        transform: translate(5px, 0);
+}
+
+
+
+
+
+
+/* About Section */
+
+#about {
+	position: relative;
+	padding-left: 146px;
+}
+
+#about img {
+	position: absolute;
+	left:   32px;
+	top: 50%;
+	margin-top:-41px;
+	width:  82px;
+	height: 82px;
+
+	border-radius: 50%;
+	border: 4px solid transparent;
+	box-shadow: 0 0 3px #ccc;
+}
+
+
+
+.link-list {
+	padding-top: 32px;
+}
+
+.link-list a {
+	text-decoration: none; 
+	display: inline-block;
+	margin-bottom: 0.3em;
+}
+.link-list a:not(:last-child) { padding-right: 16px; }
+
+
+/* PROJECT SECTION */
+
+.proj {
+	position: relative;
+
+	padding: 12px;
+	background-color: #274957;
+	color: #EFEFEF;
+
+	overflow: hidden;
+}
+
+.proj .img {
+	/* specific bkg is set by inline style */
+	background-size: 0 0;
+	background-color: #CCCCCC;
+
+	position: absolute;
+	left:   -32px;
+	right:  -32px;
+	top:    -32px;
+	bottom: -32px;
+
+	z-index: 5;
+
+	-webkit-transform: rotate(15deg);
+		-ms-transform: rotate(15deg);
+			transform: rotate(15deg);
+
+	clip-path: url(clip.svg#clip-nohover);
+	clip-path: inset(0 0 0 0);
+	-webkit-clip-path: inset(0 0 0 0);
+
+	-webkit-transition: -webkit-clip-path 0.3s, -webkit-clip-path 0.3s;
+			transition: clip-path 0.3s, -webkit-clip-path 0.3s;
+}
+
+.proj .img:after{
+	content: "";
+	display:block;
+	position: absolute;
+	left: 	32px;
+	right: 	32px;
+	top: 	32px;
+	bottom: 32px;
+	background-image: inherit;
+	background-color: #CCCCCC;
+	background-size: cover;
+	-webkit-transform: rotate(-15deg);
+		-ms-transform: rotate(-15deg);
+			transform: rotate(-15deg);
+}
+
+.proj .img:before{
+	content: "";
+	display:block;
+	position: absolute;
+	left: 	0;
+	right: 	0;
+	top: 	0;
+	bottom: 0;
+	background-color: #4A8985;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	z-index: 20;
+}
+
+.proj:hover .img {
+	z-index: 3;
+}
+
+.proj:hover .img:before {
+	opacity:0;
+	filter: alpha(opacity=0);
+}
+ 
+.proj > p {
+	padding-bottom: 1em;
+	text-align: center;
+}
+
+.proj .detailed-description p:not(:last-child) {
+	margin-bottom: 1em;
+}
+
+.proj h2 {
+	position: relative;
+	z-index: 100;
+	-webkit-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+	line-height: 20px;
+}
+
+
+.proj:hover .img {
+	position: absolute;
+	z-index: 0;
+	clip-path: url(clip.svg#clip-hover);
+	clip-path: inset(0 0 100% 0);
+	-webkit-clip-path: inset(0 0 100% 0);
+}
+
+.proj:hover h2, 
+.proj:hover p {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+
+.repo-link {
+	text-decoration: none;
+	color: #EFEFEF;
+	z-index: 9000;
+}
+
+
+
+/***************************/
+/*  MASSIVE SCREEN LAYOUT  */
+/***************************/
+
+@media (min-width: 1620px) {
+
+	body {
+		font-size: 24px;
+	}
+
+	h1 {
+		font-size: 42px;
+	}
+	h2 {
+		font-size: 24px;
+	}
+
+	#about, #projects, #resume, #blog {
+		max-width: 1024px;
+		margin-left: auto;
+		margin-right: auto;
+
+		padding: 32px;
+	}
+
+	#site-nav {
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-box-align: end;
+		-webkit-align-items: flex-end;
+		    -ms-flex-align: end;
+		        align-items: flex-end;
+
+	}
+
+	#site-nav a {
+		font-size: 32px;
+		height: 60px;
+		width: 140px;
+		margin-left: 64px;
+		margin-right: 64px;
+	}
+
+	#site-nav a.narcissism {
+		position: absolute;
+		top: 50%;
+		margin-top :-32px;
+	}
+
+	#site-nav a.narcissism p {
+		width: 500px;
+		text-align: left;
+		padding-left: 32px;
+	}
+
+	#site-nav a.narcissism .tiny{
+		display: none;
+	}
+
+	#about {
+		padding-left: 192px;
+	}
+
+	#about img {
+		width: 128px;
+		height: 128px;
+	}
+}
+
+
+/******************************/
+/*  DESKTOP LAYOUT SPECIFICS  */
+/******************************/
+
+@media (min-width: 1025px) and (max-width: 1619px) {
+	#site-nav {
+		width: 100%;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-box-align: end;
+		-webkit-align-items: flex-end;
+		    -ms-flex-align: end;
+		        align-items: flex-end;
+	}
+
+	#site-nav a {
+		margin-left: 24px;
+		margin-right: 24px;
+	}
+
+	#site-nav a.narcissism {
+		position: absolute;
+		top: 50%;
+		margin-top :-32px;
+	}
+
+	#site-nav a.narcissism p {
+		width: 500px;
+		text-align: left;
+		padding-left: 32px;
+	}
+
+	#site-nav a.narcissism .tiny{
+		display: none;
+	}
+
+
+}
+
+
+/*TABLET LAYOUT*/
+@media (max-width: 1024px) and (min-width: 591px) {
+	body {
+		padding-left: 128px;
+	}
+
+	#site-nav {
+		position: fixed;
+		left: 0px;
+
+		min-height: 320px;
+		width: 128px;
+
+		-webkit-box-orient: vertical;
+
+		-webkit-box-direction: normal;
+
+		-webkit-flex-direction: column;
+
+		    -ms-flex-direction: column;
+
+		        flex-direction: column;
+		-webkit-box-pack: end;
+		-webkit-justify-content: flex-end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+
+		height: 100%;
+	}
+
+	#site-nav a.narcissism {
+		position: absolute;
+		top: 32px;
+		left: 50%;
+		width: 64px;
+		margin-left: -32px;
+	}
+
+	#site-nav a.narcissism .big {
+		display: none;
+	}
+}
+
+
+
+/* PHONE LAYOUT */
+@media (max-width: 590px) {
+	body > div:first-of-type {
+		margin-top: 128px;
+	}
+
+	body {
+		min-width: 360px;
+	}
+
+	#site-nav {
+		z-index: 9000;
+		position: fixed;
+		top:	0;
+		left: 	0;
+		height: 64px;
+		min-height: 64px;
+		width: 100%;
+
+		padding-top: 0;
+		padding-bottom: 0;
+
+		-webkit-box-pack: justify;
+
+		-webkit-justify-content: space-between;
+
+		    -ms-flex-pack: justify;
+
+		        justify-content: space-between;
+
+		background: linear-gradient(#58A3C2, #4f9199);
+	}
+
+	#site-nav a {
+		height: 64px;
+	}
+
+	#site-nav a.narcissism .big {
+		display: none;
+	}
+}
+
+
+
+
+/* Webkit fix */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	#site-nav:before {
+		background-attachment: scroll;
+	}
+}
