@@ -3,6 +3,7 @@
 set -e 
 
 make
+cp CNAME _site
 cd _site
 
 git init
