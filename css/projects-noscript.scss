@@ -6,9 +6,31 @@
 	padding: 2em;
 }
 
+.proj .img {
+
+	left: 	-32px;
+	right: 	-32px;
+	top: 	-96px;
+	bottom: -96px;
+}
+
+.proj .img:after {
+	-webkit-filter: blur(6px);
+	-moz-filter: 	blur(6px);
+	-o-filter: 		blur(6px);
+	-ms-filter: 	blur(6px);
+    filter: 		blur(6px);
+}
+
 .proj .img:before {
 	display: none;
 }
+
+.proj .img:after {
+	background-position: center;
+
+}
+
 
 .proj > p {
 	min-height: 0 !important;
