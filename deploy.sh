@@ -3,8 +3,8 @@
 set -e 
 
 make
+cp CNAME _site
 cd _site
-cp CNAME site
 
 git init
 git config user.email "nix-autobuild@huang-hobbs.co"
