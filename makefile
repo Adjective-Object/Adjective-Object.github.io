@@ -1,17 +1,12 @@
 
-stsite=stack exec site
-
 all: html
 
-html: site.hs
-	stack build
-	$(stsite) rebuild 
+html: site
+	ls -l site
+	./site rebuild 
 
-watch: site.hs
-	stack build
-	$(stsite) watch
+watch: site
+	./site watch
 
-clean:
-	$(stsite) clean
-	stack build
-
+site: site.hs
+	ghc --make -threaded -dynamic site.hs
