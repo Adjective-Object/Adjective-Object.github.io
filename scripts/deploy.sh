@@ -19,7 +19,6 @@ $GIT init
 $GIT add *
 $GIT commit -am "automatic-build at `date`"
 
-BRANCH_NAME=`git rev-parse --abbrev-ref HEAD`
 $GIT push --force --quiet \
-    https://${GITHUB_TOKEN}:x-oauth-basic@${GITHUB_REMOTE} "$BRANCH_NAME:gh-pages"
+    https://${GITHUB_TOKEN}:x-oauth-basic@${GITHUB_REMOTE} "master:master"
 
