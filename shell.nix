@@ -8,18 +8,16 @@ in with pkgs; let
                 hakyll
                 hakyll-sass
                 split
-
-                # cabal
-                cabal-install
             ]);
 
     dependencies = [
         stdenv
         projectHaskellEnv
+        nix-prefetch-git
     ];
 
 in stdenv.mkDerivation {
-    name = "hakyll-personal-site";
+    name = "hakyll-blog";
     buildInputs = dependencies;
 }
 

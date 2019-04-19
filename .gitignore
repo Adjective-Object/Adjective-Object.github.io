@@ -1,11 +1,11 @@
+# ignore build products
 _site
 _cache
-.o
-*.swo
-*.swp
-.stack-work
-*.hi
-*.ho
-*.o
-deploy_runner.sh
+dist/
 
+site
+*.hi
+*.o
+
+deploy_runner.sh
+github_token
