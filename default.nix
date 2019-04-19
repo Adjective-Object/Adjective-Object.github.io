@@ -40,7 +40,6 @@ in stdenv.mkDerivation {
   '';
 
   buildPhase = ''
-    git checkout v2
     make
   '';
 
