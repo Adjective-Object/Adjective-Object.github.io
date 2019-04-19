@@ -39,7 +39,10 @@ in stdenv.mkDerivation {
     export LANG=${buildLocale}
   '';
 
-  buildPhase = "make";
+  buildPhase = ''
+    git checkout v2
+    make
+  '';
 
   # hacky solution to deploy the result to gh_pages
   installPhase = ''

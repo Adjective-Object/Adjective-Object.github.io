@@ -1,6 +1,6 @@
 # blog
 
-![](https://www.travis-ci.org/Adjective-Object/blog.svg?branch=master) ![](https://img.shields.io/badge/straight-passing-brightgreen.svg)
+![](https://api.travis-ci.org/Adjective-Object/Adjective-Object.github.io.svg?branch=master) ![](https://img.shields.io/badge/straight-passing-brightgreen.svg)
 
 A blog.
 
