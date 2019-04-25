@@ -2,7 +2,8 @@
 name: xgcm
 description: template tool with lua scripting
 repo-link: https://www.github.com/adjective-object/xgcm
-img: img/projects/xgcm.jpg
+cover-img: img/projects/xgcm.jpg
+proj-scale: large
 ---
 
 xgcm is a templating tool / language meant to

@@ -1,8 +1,8 @@
 ---
 name: prism
-description: cli tool to make tty color schemes from imgs
+description: cli tool to make tty color schemes from cover-imgs
 repo-link: https://www.github.com/adjective-object/prism
-img: img/placeholder_base2.jpg
+cover-img: cover-img/placeholder_base2.jpg
 ---
 
 Prism is a command line tool for generating 16-colour colourschemes for your favorite terminal emulator.

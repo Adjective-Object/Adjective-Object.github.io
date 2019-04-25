@@ -2,7 +2,8 @@
 name: cordova-clickr
 description: simple cordova proof of concept app
 repo-link: https://github.com/Adjective-Object/cordova-clickr
-img: img/projects/cordova-clickr.jpg
+cover-img: img/projects/cordova-clickr.jpg
+proj-icon:
 ---
 
 Mobile app made to test out Apache's mobile application framework, Cordova.

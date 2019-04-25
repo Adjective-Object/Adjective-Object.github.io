@@ -6,6 +6,7 @@ html: site
 	./site rebuild 
 
 watch: site
+	./site rebuild
 	./site watch
 
 site: site.hs

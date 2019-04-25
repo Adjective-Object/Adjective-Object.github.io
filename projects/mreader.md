@@ -2,10 +2,11 @@
 name: mreader
 description: unpacking HAL labs datfiles
 repo-link: https://www.github.com/adjective-object/melee_subaction_unpacker
-img: img/projects/mreader.jpg
+cover-img: img/projects/mreader.jpg
+proj-scale: medium
 ---
 
 Mreader is a project to unpack the datafiles used in HAL
-lab's internal datastructures for their games on 
-the Nintendo Gamecube. Most work has been done 
+lab's internal datastructures for their games on
+the Nintendo Gamecube. Most work has been done
 on Super Smash Brothers Melee.
