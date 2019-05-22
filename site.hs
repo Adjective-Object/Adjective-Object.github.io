@@ -143,6 +143,7 @@ getSymbolBody item =
 svgSymbolContext :: Context String
 svgSymbolContext = field "svgSymbol" $ getSymbolBody
 
+-- TODO check if the file is on the fs
 baseNameIfIconExists basename = basename
 
 projectIconContext :: Context String

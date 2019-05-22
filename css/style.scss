@@ -275,10 +275,26 @@ $proj-margin: 0.5em;
 
 .proj.medium-scale {
   width: calc(50% - 1em);
+
+  .proj-icon-svg {
+    height: 3em;
+  }
 }
 
 .proj.large-scale {
-  width: calc(100% - 1em);
+  width: calc(60% - 1em);
+  margin-left: callc(20% + 0.5em);
+  margin-right: callc(20% + 0.5em);
+  text-align: center;
+  padding: 1em;
+
+  .proj-header {
+    justify-content: center;
+  }
+
+  .proj-icon-svg {
+    height: 4em;
+  }
 }
 
 @media (max-width: 740px) {
@@ -310,6 +326,12 @@ $proj-margin: 0.5em;
   h2 {
     margin: 0;
   }
+}
+
+.proj-icon-svg {
+  // flex-shrink: 0;
+  height: 2em;
+  margin-right: 0.5em;
 }
 
 /***************************/

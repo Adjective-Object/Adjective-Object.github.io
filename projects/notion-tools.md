@@ -1,8 +1,7 @@
 ---
-name: anchorage
-fa-icon: fa-anchor
-description: widget based new tab page
-repo-link: https://github.com/Adjective-Object/anchorage
+name: notion-tools
+description: Unofficial tools for interacting with notion
+repo-link: https://github.com/Adjective-Object/notion-md-sync
 cover-img: img/projects/anchorage.jpg
 proj-scale: large
 ---
