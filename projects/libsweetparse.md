@@ -4,6 +4,7 @@ description: minimal C library for parsing t-expressions
 repo-link: https://github.com/Adjective-Object/libsweetparse
 cover-img: cover-img/placeholder_cream.jpg
 proj-scale: medium
+sortOrder: 50
 ---
 
 libsweetparse is a recursive-descent parser written in C for [t-expressions](http://readable.sourceforge.net/), a syntactically pleasing superset of s-expressions.

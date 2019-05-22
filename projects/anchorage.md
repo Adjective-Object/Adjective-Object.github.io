@@ -5,6 +5,7 @@ description: widget based new tab page
 repo-link: https://github.com/Adjective-Object/anchorage
 cover-img: img/projects/anchorage.jpg
 proj-scale: large
+sortOrder: 10
 ---
 
 Widget based new tab page written in React-js.

@@ -3,7 +3,8 @@ name: mreader
 description: unpacking HAL labs datfiles
 repo-link: https://www.github.com/adjective-object/melee_subaction_unpacker
 cover-img: img/projects/mreader.jpg
-# proj-scale: medium
+proj-scale: medium
+sortOrder: 70
 ---
 
 Mreader is a project to unpack the datafiles used in HAL

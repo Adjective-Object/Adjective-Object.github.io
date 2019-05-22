@@ -1,6 +1,9 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE FlexibleContexts #-}
+
+{-# LANGUAGE TupleSections #-}
+
 import           Data.List                      ( isInfixOf
                                                 , intercalate
                                                 , findIndex
@@ -28,6 +31,12 @@ import           Text.Regex                     ( subRegex
 import           GHC.IO.Encoding
 import           GHC.IO.Encoding
 import           System.FilePath.Posix          ( takeBaseName )
+
+
+import           Data.List                   (sortBy)
+import           Data.Ord                    (comparing)
+import           Control.Monad               (liftM)
+import           Data.Time.Locale.Compat     (defaultTimeLocale)
 --------------------------------------------------------------------------------
 
 main :: IO ()
@@ -71,7 +80,7 @@ main = do
                 let svgCtx = listField "icons" svgSymbolContext (return icons)
 
                 -- load all posts
-                projects <- loadAll "projects/*.md"
+                projects <- byPostPriority =<< loadAll "projects/*.md"
                 let projectsCtx = listField
                         "projects"
                         (defaultContext <> projectIconContext)
@@ -149,3 +158,14 @@ baseNameIfIconExists basename = basename
 projectIconContext :: Context String
 projectIconContext =
     (mapContext baseNameIfIconExists . titleField) "projectIcon"
+
+--------------------------------------------------------------------------------
+-- | Sort pages chronologically. Uses the same method as 'dateField' for
+-- extracting the date.
+byPostPriority :: MonadMetadata m => [Item a] -> m [Item a]
+byPostPriority =
+    sortByM $ \x -> getMetadataField (itemIdentifier x) "sortOrder"
+  where
+    sortByM :: (Monad m, Ord k) => (a -> m k) -> [a] -> m [a]
+    sortByM f xs = liftM (map fst . sortBy (comparing snd)) $
+                   mapM (\x -> liftM (x,) (f x)) xs
