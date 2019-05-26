@@ -6,6 +6,7 @@ BUILD_DIR=$(nix-build)
 
 cd `mktemp -d`
 cp -r "$BUILD_DIR" ./deploy
+cp CNAME ./deploy
 cd deploy
 chmod +w .
 
