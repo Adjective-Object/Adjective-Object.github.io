@@ -54,9 +54,7 @@
       </nav>
   </div>
 
-  <div class="palette" id="palette-host">
-  </div>
-
+  <div class="palette-editor control inactive" id="palette-editor-host"></div>
 
   <div id="projects">
       <h1 id="project-title-text">Projects</h1>
@@ -76,6 +74,20 @@
 
           </li>
         $endfor$
+
+        <li class="proj default-scale" id="proj-personal-site">
+          <section class="proj-header">
+            <svg class="proj-icon-svg" viewbox="0 0 100 100">
+              <use xlink:href="#personal-site" />
+            </svg>
+            <h2>personal-site</h2>
+          </section>
+          <div class="description">
+            This site supports theming!
+            If you have javascript enabled, you should be able to switch the theme with the links below. 
+            <div class="palette-switcher control inactive" id="palette-switcher-host"></div>
+          </div>
+        </li>
       </ul>
   </div>
 
@@ -91,11 +103,6 @@
           <a href="assets/resume.json"><i class="fa fa-file-code-o"></i> json</a>
           -->
         </nav>
-      </p>
-  </div>
-
-  <div id="footer">
-      </p>
       </p>
   </div>
 

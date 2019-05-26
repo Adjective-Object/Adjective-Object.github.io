@@ -3,6 +3,7 @@ $colormap: (
   color-primary-lighter: #58a3c2,
   color-background: #efefef,
   color-text: #222222,
+  color-icon-stroke: #222222,
   color-backgroundlighter: #ccc,
   color-nav-link: #eeeeee,
   color-nav-gradientstop: #4f9199,
@@ -92,6 +93,7 @@ h2 {
 #about,
 #projects,
 #resume,
+#palettes,
 #blog {
   max-width: 640px;
   margin-left: auto;
@@ -100,11 +102,16 @@ h2 {
   padding: 32px;
 }
 
+body:not(.notransition) {
+  &,
+  * {
+    -webkit-transition: color 0.2s, background-color 0.2s;
+    transition: color 0.2s, background-color 0.2s;
+  }
+}
+
 a {
   @include colormap-var(color, color-primary);
-
-  -webkit-transition: color 0.2s;
-  transition: color 0.2s;
 }
 
 a:hover {
@@ -274,7 +281,7 @@ $proj-margin: 0.5em;
     justify-content: space-between;
 
     *:last-child {
-      a:before {
+      a:not([href^="#"]):before {
         content: "\f0c1";
       }
     }
@@ -493,6 +500,46 @@ $proj-margin: 0.5em;
   }
 }
 
+///////////////////
+// Color palette //
+///////////////////
+.palette-editor {
+  padding: 2em;
+  margin: auto;
+  text-align: left;
+  width: 300px;
+
+  .palette-color {
+    appearance: none;
+    background: none;
+    border: none;
+    width: 2em;
+    height: 2em;
+    margin-right: 1em;
+  }
+
+  .palette-color + label {
+    position: relative;
+    top: -0.5em;
+  }
+
+  .palette-color + label:after {
+    content: "";
+    display: block;
+  }
+}
+
+.palette-switcher {
+  .palette-selector {
+    margin-right: 0.5em;
+    display: inline-block;
+  }
+}
+
+.control.inactive {
+  display: none !important;
+}
+
 /*TABLET LAYOUT*/
 @media (max-width: 1024px) and (min-width: 591px) {
   body {
@@ -525,6 +572,14 @@ $proj-margin: 0.5em;
     align-items: center;
 
     height: 100%;
+
+    // Use a different gradient in tablet layout, since its the whole height
+    // of the screen, instead of having small fixed height.
+    @include colormap-gradient(
+      background,
+      color-primary-lighter,
+      color-nav-gradientstop
+    );
   }
 
   #site-nav a.narcissism {
@@ -543,7 +598,7 @@ $proj-margin: 0.5em;
 /* PHONE LAYOUT */
 @media (max-width: 590px) {
   body > div:first-of-type {
-    margin-top: 128px;
+    margin-top: 64px;
   }
 
   body {
@@ -569,12 +624,6 @@ $proj-margin: 0.5em;
     -ms-flex-pack: justify;
 
     justify-content: space-between;
-
-    @include colormap-gradient(
-      background,
-      color-primary-lighter,
-      color-nav-gradientstop
-    );
   }
 
   #site-nav a {
@@ -591,19 +640,4 @@ $proj-margin: 0.5em;
   #site-nav:before {
     background-attachment: scroll;
   }
-}
-
-///////////////////
-// Color palette //
-///////////////////
-.palette {
-  text-align: center;
-}
-
-.palette-color {
-  appearance: none;
-  background: none;
-  border: none;
-  width: 2em;
-  height: 2em;
 }

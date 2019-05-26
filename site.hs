@@ -135,12 +135,12 @@ svgToSymbol svgString symbolId =
         $ replace "fill=\"#D74A6C\"" "fill=\"var(--color-highlight,#D74A6C)\""
         $ replace "fill=\"#58A3C2\""
                   "fill=\"var(--color-primary-lighter,#58A3C2)\""
-        $ replace "fill=\"#222222\"" "fill=\"var(--color-text,#222222)\""
+        $ replace "fill=\"#222222\"" "fill=\"var(--color-icon-stroke,#222222)\""
         $ replace "stroke=\"#D74A6C\""
                   "stroke=\"var(--color-highlight,#D74A6C)\""
         $ replace "stroke=\"#58A3C2\""
                   "stroke=\"var(--color-primary-lighter,#58A3C2)\""
-        $ replace "stroke=\"#222222\"" "stroke=\"var(--color-text,#222222)\""
+        $ replace "stroke=\"#222222\"" "stroke=\"var(--color-icon-stroke,#222222)\""
         $ pack
         $ subRegex xmlIdRegex (subRegex xmlSubRegex svgString "") " "
 
