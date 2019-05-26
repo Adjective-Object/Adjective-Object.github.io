@@ -6,6 +6,8 @@ let buildHaskell = haskellPackages.ghcWithPackages
           # libraries
           hakyll
           hakyll-sass
+          regex-compat
+          split
       ]);
 
     buildLocale = "en_US.UTF-8";
