@@ -264,9 +264,62 @@ $proj-margin: 0.5em;
   list-style: none;
   padding: 0.5em;
   margin: 0.5em;
-  border: 1px solid #aaa;
-  border-radius: 0.25em;
-  box-shadow: rgba(#222222, 0.2) 0px 5px 5px;
+  display: flex;
+  flex-direction: column;
+
+  .description {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    *:last-child {
+      a:before {
+        content: "\f0c1";
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+    a:before {
+      font: normal normal normal 14px/1 FontAwesome;
+      margin-right: 0.25em;
+    }
+
+    a[href*="github.com"]:before {
+      content: "\f09b";
+    }
+
+    p {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
+    }
+  }
+}
+
+.proj .project-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.proj .project-details .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 0.5em;
+}
+
+.proj .project-details .link {
+  text-align: left;
+  text-decoration: none;
+
+  .fa {
+    position: relative;
+    top: 2px;
+  }
 }
 
 .proj.default-scale {
@@ -285,7 +338,6 @@ $proj-margin: 0.5em;
   width: calc(60% - 1em);
   margin-left: calc(20% + 0.5em);
   margin-right: calc(20% + 0.5em);
-  text-align: center;
   padding: 1em;
 
   .proj-header {
@@ -305,10 +357,6 @@ $proj-margin: 0.5em;
   .proj.medium-scale {
     width: calc(100% - 1em);
   }
-}
-
-.proj .project-details {
-  display: none; // TODO expand/collapse
 }
 
 .proj-header {

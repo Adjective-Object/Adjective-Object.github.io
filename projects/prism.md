@@ -1,11 +1,8 @@
 ---
 name: prism
-description: cli tool to make tty color schemes from cover-imgs
-repo-link: https://www.github.com/adjective-object/prism
-cover-img: cover-img/placeholder_base2.jpg
-sortOrder: 90
+sortOrder: 51
 ---
 
-Prism is a command line tool for generating 16-colour colourschemes for your favorite terminal emulator.
+Image to 16-colour Scheme generator for TTY.
 
-It currently supports exporting to Xresources and xgcm configuration files.
+[github](https://www.github.com/adjective-object/prism)

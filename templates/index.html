@@ -61,7 +61,7 @@
   <div id="projects">
       <h1 id="project-title-text">Projects</h1>
       <ul id="project-list" class="project-list">
-        $for(projects)$
+          $for(projects)$
           <li class="proj $if(proj-scale)$ $proj-scale$-scale $else$ default-scale $endif$" id="proj-$name$">
             <section class="proj-header">
               <svg class="proj-icon-svg" viewbox="0 0 100 100">
@@ -70,26 +70,10 @@
               <h2>$name$</h2>
             </section>
 
-            <div class="short-description">
-              $description$
+            <div class="description">
+              $body$
             </div>
 
-            <div class="project-details">
-              <div class="detailed-description">
-                $body$
-              </div>
-
-              $if(repo-link)$
-              <a class="repo-link" href="$repo-link$">
-                <i class="fa fa-github"></i> Github Repo
-              </a>
-              $endif$
-              $if(project-link)$
-              <a class="repo-link" href="$project-link$">
-                Project Site
-              </a>
-              $endif$  
-            </div>
           </li>
         $endfor$
       </ul>

@@ -1,9 +1,0 @@
----
-name: gh-streak
-description: react-native app to check a github streak
-repo-link: https://github.com/Adjective-Object/github-streak-mobile
-cover-img: img/projects/gh-streak-check.jpg
-sortOrder: 100
----
-
-gh-streak is a react native application to check the status of a user's public github streak. It was made as a learning project to try to learn facebook's react-native framework.

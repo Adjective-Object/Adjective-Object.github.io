@@ -1,13 +1,10 @@
 ---
 name: anchorage
-fa-icon: fa-anchor
-description: widget based new tab page
-repo-link: https://github.com/Adjective-Object/anchorage
 cover-img: img/projects/anchorage.jpg
-proj-scale: large
+proj-scale: medium
 sortOrder: 10
 ---
 
-Widget based new tab page written in React-js.
+A cuistomizable widget-based new tab page written in React.
 
-Supports hotloading widgets from external projects.
+[github](https://github.com/Adjective-Object/anchorage)

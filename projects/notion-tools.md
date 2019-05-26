@@ -1,12 +1,12 @@
 ---
 name: notion-tools
-description: Unofficial tools for interacting with notion
-repo-link: https://github.com/Adjective-Object/notion-md-sync
 cover-img: img/projects/anchorage.jpg
 proj-scale: large
-sortOrder: 80
+sortOrder: 1
 ---
 
-Widget based new tab page written in React-js.
+Tools for syncing content against notion.
 
-Supports hotloading widgets from external projects.
+[notion-md-sync](https://github.com/Adjective-Object/notion-md-sync) to sync content
+
+[notion-log-exec](https://github.com/Adjective-Object/notion-log-exec), to use notion as a status reporting dashboard
