@@ -47,6 +47,7 @@ in stdenv.mkDerivation {
   installPhase = ''
     mkdir $out
     mv _site/* $out
+    cp CNAME $out
   '';
 }
 
