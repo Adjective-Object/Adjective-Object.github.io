@@ -1,0 +1,101 @@
+{
+  "settings": {
+    "size": {
+      "width": 435,
+      "height": 210
+    },
+    "crest": false
+  },
+  "layers": [
+    [
+      {
+        "type": "line",
+        "vertices": [
+          {
+            "x": 300,
+            "y": 165
+          },
+          {
+            "x": 330,
+            "y": 135
+          }
+        ]
+      },
+      {
+        "type": "close",
+        "vertices": []
+      }
+    ],
+    [
+      {
+        "type": "line",
+        "vertices": [
+          {
+            "x": 330,
+            "y": 105
+          },
+          {
+            "x": 300,
+            "y": 135
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "line",
+        "vertices": [
+          {
+            "x": 315,
+            "y": 180
+          },
+          {
+            "x": 360,
+            "y": 135
+          },
+          {
+            "x": 315,
+            "y": 90
+          },
+          {
+            "x": 270,
+            "y": 135
+          },
+          {
+            "x": 315,
+            "y": 180
+          }
+        ]
+      }
+    ]
+  ],
+  "styles": [
+    {
+      "thickness": 16,
+      "strokeLinecap": "square",
+      "strokeLinejoin": "bevel",
+      "color": "#58a3c2",
+      "fill": "none",
+      "mirror_style": 0,
+      "transform": "rotate(45)"
+    },
+    {
+      "thickness": 16,
+      "strokeLinecap": "butt",
+      "strokeLinejoin": "round",
+      "color": "#d74a6c",
+      "fill": "none",
+      "mirror_style": 0,
+      "transform": "rotate(45)"
+    },
+    {
+      "thickness": 10,
+      "strokeLinecap": "square",
+      "strokeLinejoin": "miter",
+      "color": "#222",
+      "fill": "#222",
+      "mirror_style": 0,
+      "transform": "rotate(45)"
+    }
+  ]
+}
